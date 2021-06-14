@@ -1,18 +1,18 @@
 $(document).ready(function () {
     //current day/time
-    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+    $("#currentDay").text("Today is " + moment().format("MMMM Do YYYY, h:mm:ss a"));
 
     //save button
     $(".saveBtn").on("click", function () {
-        //get nearby values.
+        //get nearby values
         console.log(this);
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
-        //set items in local storage.
+        //set items in local storage
         localStorage.setItem(time, text);
     })
     
-    //load any saved data from LocalStorage - do this for each hour created.
+    //load any saved data from LocalStorage - do this for each hour created
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 
     function hourTracker() {
-        //get current number of hours.
+        //get current number of hours
         var currentHour = moment().hour();
 
         // loop over time blocks
@@ -33,7 +33,7 @@ $(document).ready(function () {
             var blockHour = parseInt($(this).attr("id").split("hour")[1]);
             console.log( blockHour, currentHour)
 
-            //check if we've moved past this time
+            //check current hour/status
             if (blockHour < currentHour) {
                 $(this).addClass("past");
                 $(this).removeClass("future");

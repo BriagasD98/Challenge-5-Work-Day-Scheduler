@@ -21,6 +21,10 @@ body {
     border-bottom: 10px solid black;
   }
   
+  .container {
+      margin: 50px auto;
+  }
+
   .description{
     white-space: pre-wrap;
   }
@@ -63,9 +67,19 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    cursor: pointer;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+  }
+
+  footer {
+    text-align: center;
+    margin: 30px auto;
+    margin-bottom: 0%;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 20px;
   }
